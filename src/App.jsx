@@ -1,11 +1,14 @@
 import PokemonCard from './components/PokemonCard'
+import PropTypes from "prop-types"
 
 import './App.css'
+
+
 function App() {
 
   const pokemonList = [
     {
-      name: "bulbasaur",
+      name: "Ballurus",
       imgSrc:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
     },
@@ -18,6 +21,7 @@ function App() {
 
     {
         name: "kirikou",
+        imgSrc:"",
        
     },
   ]
@@ -26,12 +30,20 @@ function App() {
   return (
     <>
     <div className='PokemonCard-container'>
+      <PokemonCard pokemon={pokemonList[0]}/>
       <PokemonCard pokemon={pokemonList[1]}/>
-      <PokemonCard pokemon={pokemonList[2]}/>
       <PokemonCard pokemon={pokemonList[0]}/>
     </div> 
     </>
   )
+  
+}
+
+PokemonCard.PropTypes = {
+  pokemon: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    imgSrc: PropTypes.string,
+  }).isRequired,
 }
 
 export default App
