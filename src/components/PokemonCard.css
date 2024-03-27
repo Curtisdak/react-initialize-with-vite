@@ -13,6 +13,10 @@ p{
     transition: all 1s ease-in-out;
     animation: moveContainer 5s ease-in-out forwards infinite ;
     box-sizing: border-box;
+    padding: 20px;
+    gap: 50px;
+   
+    display: flex;
   }
   .PokemonCard-container:hover{
     opacity: 1;
@@ -30,10 +34,18 @@ p{
     animation: light 1s ease-in-out forwards infinite ;
   
   }
+  figure{
+    margin: 10px;
+   box-shadow: 0 0 10px rgb(0, 0, 0);
+   border-radius: 20px;
+  }
   
   figcaption{
     font-size: 2rem;
     padding: 10px;
+    margin: 10px;
+  
+
   }
   @keyframes light {
     0%{

@@ -1,32 +1,17 @@
 
 import './PokemonCard.css'
 
-const pokemonList = [
-    {
-      name: "bulbasaur",
-      imgSrc:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-    },
-    {
-      name: "mew",
-      imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/19.png",
-        
-    },
-
-    {
-        name: "kirikou",
-       
-    },
-  ];
-
-function PokemonCard(){
-    const pokemon =pokemonList[1]
+function PokemonCard({pokemon}){
+    
+   
        if (!pokemon.imgSrc) {
          return (
            <>
+             
+             <figure>
              <p>???</p>
              <figcaption>{pokemon.name}</figcaption>
+             </figure>
            </>
          );
        } else {
