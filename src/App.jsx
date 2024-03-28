@@ -1,12 +1,15 @@
 import PokemonCard from './components/PokemonCard'
+import Navbar from './components/Navbar'
 import PropTypes from "prop-types"
 
 import './App.css'
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 
 function App() {
-  const pokemonList = [
+
+  const [pokemons, setPokemons] = useState([
+
     {
         name: "bulbasaur",
         imgSrc:
@@ -30,18 +33,28 @@ function App() {
       {
         name: "mew",
       },
-    ];
-  const [index, setIndex] = useState(0);
+    ]);
 
+    const [theIndex, setIndex] = useState(0);
+
+    const prevEl = () => {
+      if(theIndex > 0){
+        setIndex(theIndex - 1)
+      }
+    } ;
+
+    const nextEl = () => {
+      if(theIndex < pokemons.length-1){
+        setIndex(theIndex + 1)
+      }
+    } ;   
   // const pokemon = { name:"mew"};
   return (
     <>
     <div className='PokemonCard-container'>
-      <PokemonCard pokemon={pokemonList[index]}/>
+      <PokemonCard pokemon={pokemons[theIndex]}/>
     </div> 
-
-    {index > 0 && <button onClick={() => setIndex(index - 1)}>Prev</button> }
-    {index < pokemonList.length - 1 ? <button onClick={() => setIndex(index + 1)}> more </button> : <button className='disabled'> more</button>}
+    <Navbar prevEl={prevEl} nextEl={nextEl} />
     </>
   )
   
