@@ -42,14 +42,74 @@
 }
 */
 button{
-  width: 100px;
+  flex: 1;
   height: 50px;
   padding: 5px;
-  margin-top:20px ;
-  margin-right: 10px;
+  margin:20px ;
+  margin-right:5px;
+  background-color: rgba(240, 203, 36, 0.501);
+}
+.poke-button{
+  
+}
+.show-or-close{
+  border-radius: 50%;
+  padding: 1px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 1px;
+  right: 5px;
+}
+.show-or-close:hover{
+  background-color: rgba(54, 55, 54, 0.724);
+  padding:1px;
+  box-shadow: 0 0 20px rgb(0, 0, 0);
+  transform: rotate(810deg);
 }
 .disabled{
   display: disabled;
   box-shadow: 0 0 10px red;
   border: none;
+}
+.super-container{
+  box-shadow: 0 0 20px white;
+  padding: 40px;
+  border-radius: 20px;
+  box-sizing: content-box;
+  background-color: brown;
+  backdrop-filter: blur(5px);
+  max-width: 100%;
+  position: relative;
+ 
+}
+.imgcontainer{
+  display: flex;
+  flex-direction: column;
+ align-items: center;
+  justify-content: center;
+  
+}
+.imgcontainer button{
+  width: 30%;
+}
+img{
+  filter: drop-shadow(0 0 10px white);
+  animation:slowMoves 5s ease-in-out infinite forwards;
+  width: 300px;
+}
+
+@keyframes slowMoves {
+  0%{
+    transform: scale(1);
+  }
+
+  50%{
+    transform: scale(1.1);
+  }
+
+  100%{
+    transform: scale(1);
+  }
+  
 }

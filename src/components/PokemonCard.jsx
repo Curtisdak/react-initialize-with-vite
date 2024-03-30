@@ -9,7 +9,7 @@ function PokemonCard({pokemon}){
            <>
              
              <figure>
-             <p>???</p>
+             <h2>???</h2>
              <figcaption>{pokemon.name}</figcaption>
              </figure>
            </>

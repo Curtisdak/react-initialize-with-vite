@@ -35,26 +35,9 @@ function App() {
       },
     ]);
 
-    const [theIndex, setIndex] = useState(0);
-
-    const prevEl = () => {
-      if(theIndex > 0){
-        setIndex(theIndex - 1)
-      }
-    } ;
-
-    const nextEl = () => {
-      if(theIndex < pokemons.length-1){
-        setIndex(theIndex + 1)
-      }
-    } ;   
-  // const pokemon = { name:"mew"};
   return (
     <>
-    <div className='PokemonCard-container'>
-      <PokemonCard pokemon={pokemons[theIndex]}/>
-    </div> 
-    <Navbar prevEl={prevEl} nextEl={nextEl} />
+    <Navbar eachBtn={pokemons} />
     </>
   )
   
