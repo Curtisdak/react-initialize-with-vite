@@ -1,11 +1,12 @@
 // import React from "react";
-import { useState } from "react"
+import React, { useState } from "react"
+import  { useEffect } from "react"
 
 function Navbar({eachBtn}){
     
     const [pokes, setPokes] = useState(eachBtn);
     const [index , setIndex] = useState(0);
-    const [toggle, setToggle] = useState(true)
+    // const [toggle, setToggle] = useState(true)
 
 //  just to train by keeping the button "prev" and "next" I willcreate function !
 
@@ -15,6 +16,17 @@ function Navbar({eachBtn}){
     const deleteEl = (avatar) => {
         setPokes(pokes.filter((_, index) => index !== avatar))
     };
+
+useEffect(() => {
+    const pikaAlert = (event) => {
+        if(event.target.textContent === 'pikachu' || ){
+            alert("pika pikachu !!!")
+        }   
+    };
+    document.addEventListener('click', pikaAlert);
+    return () => document.removeEventListener('click', pikaAlert);
+}, 
+[]);
 
     return(
         <>
@@ -34,12 +46,8 @@ function Navbar({eachBtn}){
           {poke.name}
         </button>)
         )}
-        
-        </div>
-        
-
+        </div>        
         </>
-
     )
 }
 export default Navbar

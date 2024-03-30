@@ -35,6 +35,10 @@ function App() {
       },
     ]);
 
+    useEffect(() => {
+      alert("hello pokemon trainer")
+    },[])
+
   return (
     <>
     <Navbar eachBtn={pokemons} />
