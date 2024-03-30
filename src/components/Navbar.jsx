@@ -19,7 +19,7 @@ function Navbar({eachBtn}){
 
 useEffect(() => {
     const pikaAlert = (event) => {
-        if(event.target.textContent === 'pikachu' || ){
+        if(event.target.textContent === 'pikachu' ){
             alert("pika pikachu !!!")
         }   
     };
